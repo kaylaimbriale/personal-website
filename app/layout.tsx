@@ -16,6 +16,26 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Kayla Imbriale",
   description: "Personal portfolio of Kayla Imbriale, CS student and software developer.",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "manifest", url: "/site.webmanifest" },
+    ],
+  },
+  openGraph: {
+    title: "Kayla Imbriale",
+    description: "Building technology that makes a real difference.",
+    url: "https://kaylaimbriale.vercel.app",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
