@@ -1,37 +1,53 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 },
+  viewport: { once: true },
+};
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-blush">
 
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-        <p className="text-mauve text-sm font-semibold tracking-widest uppercase mb-4">
-          Computer Science · Boston College · Class of 2026
-        </p>
-        <h1 className="text-6xl font-bold text-foreground mb-6">
-          Kayla Imbriale
-        </h1>
-        <p className="text-lg text-mauve max-w-xl leading-relaxed mb-10">
-          I am passionate about healthcare tech and human-centered design, 
-          and I'm looking to make a real-world impact through my work.
-        </p>
-        <div className="flex gap-4">
-          
-          <a href="#projects"
-            className="bg-rose text-white px-7 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            View My Work
-          </a>
-          
-          <a href="/resume.pdf"
-            className="border border-rose text-rose px-7 py-3 rounded-lg font-semibold hover:bg-petal transition"
-          >
-            Download Resume
-          </a>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col items-center"
+        >
+          <p className="text-mauve text-sm font-semibold tracking-widest uppercase mb-4">
+            Computer Science · Boston College · Class of 2026
+          </p>
+          <h1 className="text-6xl font-bold text-foreground mb-6">
+            Kayla Imbriale
+          </h1>
+          <p className="text-lg text-mauve max-w-xl leading-relaxed mb-10">
+            I am passionate about healthcare tech and human-centered design, 
+            and I'm looking to make a real-world impact through my work.
+          </p>
+          <div className="flex gap-4">
+            <a href="#projects"
+              className="bg-rose text-white px-7 py-3 rounded-lg font-semibold hover:opacity-90 transition"
+            >
+              View My Work
+            </a>
+            <a href="/resume.pdf"
+              className="border border-rose text-rose px-7 py-3 rounded-lg font-semibold hover:bg-petal transition"
+            >
+              Download Resume
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       {/* Intro Section */}
-      <section className="bg-white py-24 px-6">
+      <motion.section {...fadeUp} className="bg-white py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-foreground mb-6">Hi, I'm Kayla.</h2>
           <p className="text-lg text-foreground leading-relaxed mb-4">
@@ -45,17 +61,16 @@ export default function Home() {
             information technology, and network engineering. If you're working on
             something that matters, I'd love to be part of it.
           </p>
-          
           <a href="/about"
             className="text-rose font-semibold hover:underline"
           >
             More about me →
           </a>
         </div>
-      </section>
+      </motion.section>
 
       {/* Featured Projects Section */}
-      <section id="projects" className="bg-blush py-24 px-6">
+      <motion.section {...fadeUp} id="projects" className="bg-blush py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-foreground text-center mb-4">
             Featured Projects
@@ -106,7 +121,6 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              
               <a href="https://github.com/kaylaimbriale"
                 className="text-rose text-sm font-semibold hover:underline mt-auto"
               >
@@ -132,7 +146,6 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-              
               <a href="https://github.com/kaylaimbriale"
                 className="text-rose text-sm font-semibold hover:underline mt-auto"
               >
@@ -143,7 +156,6 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            
             <a href="/projects"
               className="border border-rose text-rose px-7 py-3 rounded-lg font-semibold hover:bg-petal transition"
             >
@@ -151,10 +163,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact CTA Section */}
-      <section className="bg-white py-24 px-6">
+      <motion.section {...fadeUp} className="bg-white py-24 px-6">
         <div className="max-w-xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-foreground mb-4">Let's connect.</h2>
           <p className="text-lg text-foreground leading-relaxed mb-8">
@@ -163,19 +175,16 @@ export default function Home() {
             you're building, my inbox is open.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
-            
             <a href="mailto:kayla.imbriale@gmail.com"
               className="bg-rose text-white px-7 py-3 rounded-lg font-semibold hover:opacity-90 transition"
             >
               Say Hello
             </a>
-            
             <a href="https://linkedin.com/in/kaylaimbriale"
               className="border border-rose text-rose px-7 py-3 rounded-lg font-semibold hover:bg-petal transition"
             >
               LinkedIn
             </a>
-            
             <a href="https://github.com/kaylaimbriale"
               className="border border-rose text-rose px-7 py-3 rounded-lg font-semibold hover:bg-petal transition"
             >
@@ -183,7 +192,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
     </main>
   );
