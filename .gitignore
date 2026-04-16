@@ -1,2 +1,4 @@
 node_modules
 .next
+public/resume.pdf
+.DS_Store
