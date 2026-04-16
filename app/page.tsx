@@ -126,7 +126,7 @@ export default function Home() {
                 Engineering course.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["React", "Node.js", "PostgreSQL"].map(tag => (
+                {["Django", "HTML", "CSS"].map(tag => (
                   <span key={tag} className="text-xs font-semibold text-mauve bg-petal px-3 py-1 rounded-full">
                     {tag}
                   </span>
